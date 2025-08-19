@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 dotenv.config({ override: true });
 
 import twilio from 'twilio';
-import User from '../models/User.js';
+import User from '../models/user.js';
 import jwt from 'jsonwebtoken';
 
 const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
@@ -67,4 +67,5 @@ export const verifyOTP = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
+
 };
